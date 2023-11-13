@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
-
-const BookSearch = () => {
+const BookSearch = ({ addToFavorites }) => { // Added prop to accept addToFavorites function
     const [query, setQuery] = useState('');
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -51,6 +49,7 @@ const BookSearch = () => {
                         <h3>{book.volumeInfo.title}</h3>
                         <p>{book.volumeInfo.authors?.join(', ')}</p>
                         <img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.volumeInfo.title} />
+                        <button onClick={() => addToFavorites(book)}>Add to Favorites</button> {/* Add to Favorites button */}
                     </li>
                 ))}
             </ul>

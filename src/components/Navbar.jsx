@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App';
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
         <h1>React Books App</h1>
        </div>
        <div>
-        Your Favorite
+        Your Favorite Books
        </div>
         </div>
   )

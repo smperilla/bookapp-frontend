@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const BookSearch = ({ addToFavorites }) => { // Added prop to accept addToFavorites function
+const BookSearch = () => {
     const [query, setQuery] = useState('');
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +23,26 @@ const BookSearch = ({ addToFavorites }) => { // Added prop to accept addToFavori
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const addToFavorites = async (book) => {
+      try {
+        await fetch('http://localhost:3001/api/favorites', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            bookId: book.id,
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+            thumbnail: book.volumeInfo.imageLinks?.thumbnail,
+          }),
+        });
+        // Handle successful addition (e.g., show a message)
+      } catch (error) {
+        console.error('Error adding favorite:', error);
+      }
     };
 
     const handleSubmit = (e) => {
@@ -48,8 +68,10 @@ const BookSearch = ({ addToFavorites }) => { // Added prop to accept addToFavori
                     <li key={book.id}>
                         <h3>{book.volumeInfo.title}</h3>
                         <p>{book.volumeInfo.authors?.join(', ')}</p>
-                        <img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.volumeInfo.title} />
-                        <button onClick={() => addToFavorites(book)}>Add to Favorites</button> {/* Add to Favorites button */}
+                        {book.volumeInfo.imageLinks?.thumbnail && (
+                            <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+                        )}
+                        <button onClick={() => addToFavorites(book)}>Add to Favorites</button>
                     </li>
                 ))}
             </ul>

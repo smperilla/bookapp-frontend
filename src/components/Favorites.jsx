@@ -1,20 +1,53 @@
-import React from 'react';
-import '../App.css'; // Ensure this import is correct for your CSS
+import React, { useState, useEffect } from 'react';
 
-const Favorites = ({ favorites, removeFromFavorites }) => {
+const Favorites = () => {
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/favorites');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setFavorites(data);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
+
+    fetchFavorites();
+  }, []);
+
+  const removeFromFavorites = async (bookId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/api/favorites/${bookId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      setFavorites(favorites.filter(book => book.bookId !== bookId));
+    } catch (error) {
+      console.error('Error removing favorite:', error);
+    }
+  };
+
   return (
     <div>
       <h2>Favorites</h2>
       {favorites.length > 0 ? (
         <ul>
           {favorites.map((book) => (
-            <li key={book.id}>
-              <h3>{book.volumeInfo.title}</h3>
-              <p>{book.volumeInfo.authors?.join(', ')}</p>
-              {book.volumeInfo.imageLinks?.thumbnail && (
-                <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+            <li key={book.bookId}>
+              <h3>{book.title}</h3>
+              <p>{book.authors?.join(', ')}</p>
+              {book.thumbnail && (
+                <img src={book.thumbnail} alt={book.title} />
               )}
-              <button onClick={() => removeFromFavorites(book.id)}>Remove from Favorites</button>
+              <button onClick={() => removeFromFavorites(book.bookId)}>Remove from Favorites</button>
             </li>
           ))}
         </ul>

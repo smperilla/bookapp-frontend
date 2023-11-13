@@ -3,8 +3,6 @@ import axios from 'axios';
 
 
 
-
-
 const BookSearch = () => {
     const [query, setQuery] = useState('');
     const [books, setBooks] = useState([]);

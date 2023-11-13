@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import BookList from "./components/BookList";
+import Home from "./components/Home";
 import BookDetails from "./components/BookDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<BookList />} />
+        <Route path="/" element={<Home />} />
         <Route path="/book/:id" element={<BookDetails />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<BookSearch />} />

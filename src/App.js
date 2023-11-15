@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Register from "./components/Register";
+import Notes from "./components/Notes";
 
 function App() {
   const [favorites, setFavorites] = useState([]); // State to store favorites
@@ -39,6 +40,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/notes" element={<Notes />} />
+
 
       </Routes>
       <Footer />

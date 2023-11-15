@@ -5,9 +5,9 @@ import '../App';
 const Home = () => {
   return (
     <div className='book-list' >Home
-     <Link to="/search" className="button-link">Search for Books</Link>
+     {/* <Link to="/search" className="button-link">Search for Books</Link>
      <Link to="/favorites" className="button-link">View Favorites</Link>
-      <Link to="/login" className="button-link">Login</Link>
+      <Link to="/login" className="button-link">Login</Link> */}
     </div>
   )
 }

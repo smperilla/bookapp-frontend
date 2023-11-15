@@ -26,25 +26,32 @@ const BookSearch = () => {
     };
 
     const addToFavorites = async (book) => {
-      try {
-        await fetch('http://localhost:3001/api/favorites', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            bookId: book.id,
-            title: book.volumeInfo.title,
-            authors: book.volumeInfo.authors,
-            thumbnail: book.volumeInfo.imageLinks?.thumbnail,
-          }),
-        });
-        // Handle successful addition (e.g., show a message)
-      } catch (error) {
-        console.error('Error adding favorite:', error);
-      }
-    };
-
+        try {
+          const token = localStorage.getItem('token'); // Retrieve the token from local storage
+          if (!token) {
+            console.error('No token found, user might not be logged in');
+            return;
+          }
+      
+          await fetch('http://localhost:3001/api/favorites', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': token // Include the token in the Authorization header
+            },
+            body: JSON.stringify({
+              bookId: book.id,
+              title: book.volumeInfo.title,
+              authors: book.volumeInfo.authors,
+              thumbnail: book.volumeInfo.imageLinks?.thumbnail,
+            }),
+          });
+          // Handle successful addition (e.g., show a message)
+        } catch (error) {
+          console.error('Error adding favorite:', error);
+        }
+      };
+      
     const handleSubmit = (e) => {
         e.preventDefault();
         searchBooks();

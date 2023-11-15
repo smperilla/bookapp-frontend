@@ -6,7 +6,18 @@ const Favorites = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/favorites');
+        const token = localStorage.getItem('token'); // Retrieve the token from local storage
+        if (!token) {
+          console.error('No token found, user might not be logged in');
+          return;
+        }
+  
+        const response = await fetch('http://localhost:3001/api/favorites', {
+          headers: {
+            'Authorization': token // Include the token in the Authorization header
+          }
+        });
+  
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -22,10 +33,19 @@ const Favorites = () => {
 
   const removeFromFavorites = async (bookId) => {
     try {
+      const token = localStorage.getItem('token'); // Retrieve the token from local storage
+      if (!token) {
+        console.error('No token found, user might not be logged in');
+        return;
+      }
+  
       const response = await fetch(`http://localhost:3001/api/favorites/${bookId}`, {
         method: 'DELETE',
+        headers: {
+          'Authorization': token // Include the token in the Authorization header
+        }
       });
-
+  
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import Favorites from "./components/Favorites";
 import BookSearch from "./components/BookSearch";
 import React, { useState } from "react";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Register from "./components/Register";
 
 function App() {
   const [favorites, setFavorites] = useState([]); // State to store favorites
@@ -33,6 +36,10 @@ function App() {
         <Route path="/book/:id" element={<BookDetails />} />
         <Route path="/favorites" element={<Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />} />
         <Route path="/search" element={<BookSearch addToFavorites={addToFavorites} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/register" element={<Register />} />
+
       </Routes>
       <Footer />
     </div>

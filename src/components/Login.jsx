@@ -22,8 +22,8 @@ function Login() {
         localStorage.setItem('token', data.token);
         console.log('Login successful');
 
-        ////REDIRECT TO PROTECTED ROUTE
-        navigate('/search'); 
+        
+        navigate('/favorites'); 
 
     
       } else {

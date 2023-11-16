@@ -2,29 +2,14 @@
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
-  background-color: #E0FFFF; /* Baby blue background for the app */
+  background-color: #ffffff; /* Baby blue background for the app */
   color: #505050; /* Medium grey for text */
 }
 
 /* Container for page content */
 .container {
   padding: 20px;
-  margin-left: 220px; /* Adjusted to not overlap with the navbar */
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .navbar {
-      width: 100%; /* Full width for mobile */
-      height: auto;
-      align-items: center;
-  }
-
-  .container {
-      margin-left: 0; /* Remove the left margin on smaller screens */
-      padding: 20px;
-  }
+  margin-top: 80px; /* Increased top margin to avoid overlap with navbar */
 }
 
 /* Navbar Styling */
@@ -33,29 +18,29 @@ body {
   color: #505050; /* Grey for text */
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100vh; /* Full height */
+  flex-direction: row; /* Row for horizontal layout */
+  align-items: center; /* Center items vertically in navbar */
+  justify-content: space-evenly; /* Evenly space items horizontally */
+  height: 60px; /* Set a fixed height for the navbar */
   position: fixed; /* Fixed position */
-  width: 200px; /* Set width */
+  width: 100%; /* Full width */
+  top: 0; /* Position at the top */
+  left: 0; /* Align to left edge */
+  z-index: 1000; /* Ensure navbar stays on top */
 }
 
 .navbar h1 {
   color: #505050;
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin-right: 20px; /* Adjusted for spacing on the right */
 }
 
 .navbar .button-link {
   text-decoration: none;
   color: #708090; /* Slate grey for links */
   font-weight: bold;
-  margin-bottom: 10px; /* Spacing between links */
+  margin-right: 10px; /* Spacing between links */
   transition: color 0.3s;
-}
-
-.navbar .button-link:hover {
-  color: #A9A9A9; /* Darker grey on hover */
 }
 
 /* Active link styling */
@@ -65,22 +50,26 @@ body {
   padding-left: 16px; /* Adjust padding for alignment */
 }
 
-/* Responsive Design */
+/* Responsive Design Adjustments */
 @media (max-width: 600px) {
   .navbar {
-      width: 100%; /* Full width for mobile */
       height: auto;
-      align-items: center;
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      justify-content: flex-start; /* Align items to the start for vertical layout */
+      padding: 10px; /* Adjust padding for smaller navbar */
   }
 
   .navbar h1 {
-      text-align: center;
+      margin-bottom: 10px; /* Space below the title */
   }
 
   .navbar .button-link {
-      text-align: center;
-      display: block;
-      width: 100%;
+      margin-right: 0; /* Remove right margin on smaller screens */
+      margin-bottom: 5px; /* Add bottom margin for spacing */
+  }
+
+  .container {
+      margin-top: auto; /* Adjust top margin based on navbar size */
   }
 }
 
@@ -90,11 +79,25 @@ body {
   border: 1px solid #B0E0E6; /* Light baby blue border color */
   padding: 15px;
   border-radius: 5px;
-  margin-left: 220px; /* Adjust margin to not overlap navbar */
-  margin-bottom: 20px;
+  margin-top: 20px; /* Adjust margin for spacing below navbar */
 }
 
-.component h2 {
-  color: #505050; /* Grey for component titles */
+
+/* Footer Styling */
+.footer {
+  background-color: #B0E0E6; /* Light baby blue background for the footer */
+  color: #505050; /* Grey text color */
+  text-align: center; /* Center align the text */
+  padding: 20px; /* Padding for spacing */
+  position: fixed; /* Fixed position to keep it at the bottom */
+  left: 0; /* Align to the left edge */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure footer stays on top of other elements */
 }
 
+/* Example Footer Content Styling */
+.footer-content {
+  margin: 0 auto; /* Center the content inside the footer */
+  max-width: 1200px; /* Maximum width of the footer content */
+}

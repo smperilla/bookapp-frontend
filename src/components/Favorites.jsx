@@ -12,7 +12,7 @@ const Favorites = () => {
           return;
         }
   
-        const response = await fetch('http://localhost:3001/api/favorites', {
+        const response = await fetch('https://bookapp-backend-zph0.onrender.com/api/favorites', {
           headers: {
             'Authorization': token // Include the token in the Authorization header
           }
@@ -39,7 +39,7 @@ const Favorites = () => {
         return;
       }
   
-      const response = await fetch(`http://localhost:3001/api/favorites/${bookId}`, {
+      const response = await fetch(`https://bookapp-backend-zph0.onrender.com/api/favorites/${bookId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token // Include the token in the Authorization header

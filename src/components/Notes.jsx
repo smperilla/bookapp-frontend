@@ -15,7 +15,7 @@ const Notes = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:3001/api/notes', {
+        const response = await fetch('https://bookapp-backend-zph0.onrender.com/api/notes', {
           headers: {
             'Authorization': token
           }

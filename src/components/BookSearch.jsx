@@ -7,6 +7,7 @@ const BookSearch = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    //const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLEKEY;
     const GOOGLE_API_KEY = 'AIzaSyDN9th_WVnZn6H3taU6P9I03vUmBd5S9SQ';  // Replace with your Google Books API key
     const GOOGLE_BOOKS_API_URL = 'https://www.googleapis.com/books/v1/volumes';
 

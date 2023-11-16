@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   background-color: #E0FFFF; /* Baby blue background for the app */
   color: #505050; /* Medium grey for text */
 }
@@ -10,7 +10,7 @@ body {
 .container {
   padding: 20px;
   margin-left: 220px; /* Adjusted to not overlap with the navbar */
-  font-family: 'MuseoModerno', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive Design */
@@ -97,3 +97,4 @@ body {
 .component h2 {
   color: #505050; /* Grey for component titles */
 }
+

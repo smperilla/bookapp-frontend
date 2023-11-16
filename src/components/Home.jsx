@@ -19,6 +19,7 @@ const Home = () => {
 
     return (
         <div className='container'>
+            <strong>Quote of the Day: </strong>
             {randomQuote ? (
                 <div>
                     <p>{randomQuote.text}</p>

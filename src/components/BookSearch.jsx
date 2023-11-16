@@ -34,7 +34,7 @@ const BookSearch = () => {
             return;
           }
       
-          await fetch('http://localhost:3001/api/favorites', {
+          await fetch('https://bookapp-backend-zph0.onrender.com/api/favorites', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

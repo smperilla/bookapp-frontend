@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import BookDetails from "./components/BookDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Favorites from "./components/Favorites";
@@ -34,7 +33,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/book/:id" element={<BookDetails />} />
         <Route path="/favorites" element={<Favorites favorites={favorites} removeFromFavorites={removeFromFavorites} />} />
         <Route path="/search" element={<BookSearch addToFavorites={addToFavorites} />} />
         <Route path="/login" element={<Login />} />

@@ -7,9 +7,9 @@ const Navbar = () => {
     <div className='navbar'>
         
        <div>
-        <h1>Bookworm</h1>
+        <h1 className="title" >Bookworm</h1>
        </div>
-       <div>
+       <div className="caption">
         Your personal bookshelf
        </div> <br />
        <Link to="/home" className="button-link">Home</Link>

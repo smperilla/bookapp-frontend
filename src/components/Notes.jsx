@@ -121,7 +121,7 @@ const Notes = () => {
   };
 
   return (
-    <div>
+    <div className="container" >
       <h2>My Notes</h2>
       <div>
         <textarea

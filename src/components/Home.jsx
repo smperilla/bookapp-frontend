@@ -1,15 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../App';
 
 const Home = () => {
-  return (
-    <div className='book-list' >Home
-     {/* <Link to="/search" className="button-link">Search for Books</Link>
-     <Link to="/favorites" className="button-link">View Favorites</Link>
-      <Link to="/login" className="button-link">Login</Link> */}
-    </div>
-  )
+    const [randomQuote, setRandomQuote] = useState(null);
+
+    useEffect(() => {
+        fetch('https://type.fit/api/quotes')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * data.length);
+                    setRandomQuote(data[randomIndex]);
+                }
+            })
+            .catch(error => console.log('Error fetching quotes:', error));
+    }, []);
+
+    return (
+        <div className='container'>
+            {randomQuote ? (
+                <div>
+                    <p>{randomQuote.text}</p>
+                    <p>— {randomQuote.author || 'Unknown'}</p>
+                </div>
+            ) : (
+                <p>Loading quote...</p>
+            )}
+        </div>
+    );
 }
 
-export default Home
+export default Home;

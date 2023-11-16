@@ -59,7 +59,7 @@ const BookSearch = () => {
     };
 
     return (
-        <div>
+        <div className="container" >
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 

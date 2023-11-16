@@ -1,36 +1,99 @@
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
-
+/* Global Styles */
 body {
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E0FFFF; /* Baby blue background for the app */
+  color: #505050; /* Medium grey for text */
 }
 
+/* Container for page content */
+.container {
+  padding: 20px;
+  margin-left: 220px; /* Adjusted to not overlap with the navbar */
+  font-family: 'MuseoModerno', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      width: 100%; /* Full width for mobile */
+      height: auto;
+      align-items: center;
+  }
+
+  .container {
+      margin-left: 0; /* Remove the left margin on smaller screens */
+      padding: 20px;
+  }
+}
+
+/* Navbar Styling */
 .navbar {
-  width: 100%;
-  height: 10vh;
-  background: #4CAF50; /* Updated color */
-  color: white;
+  background-color: #B0E0E6; /* Lighter shade of baby blue for navbar */
+  color: #505050; /* Grey for text */
+  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Changed from space-evenly for better spacing */
-  padding: 0 20px; /* Added padding */
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh; /* Full height */
+  position: fixed; /* Fixed position */
+  width: 200px; /* Set width */
 }
 
-.footer {
-  width: 100%;
-  height: 10vh;
-  background: #4CAF50;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
+.navbar h1 {
+  color: #505050;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.navbar .button-link {
+  text-decoration: none;
+  color: #708090; /* Slate grey for links */
+  font-weight: bold;
+  margin-bottom: 10px; /* Spacing between links */
+  transition: color 0.3s;
+}
+
+.navbar .button-link:hover {
+  color: #A9A9A9; /* Darker grey on hover */
+}
+
+/* Active link styling */
+.active-nav-link {
+  color: #505050; /* Grey for active link */
+  border-left: 4px solid #505050; /* Left border for active link */
+  padding-left: 16px; /* Adjust padding for alignment */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      width: 100%; /* Full width for mobile */
+      height: auto;
+      align-items: center;
+  }
+
+  .navbar h1 {
+      text-align: center;
+  }
+
+  .navbar .button-link {
+      text-align: center;
+      display: block;
+      width: 100%;
+  }
+}
+
+/* Other Components */
+.component {
+  background-color: #fff; /* White background for components */
+  border: 1px solid #B0E0E6; /* Light baby blue border color */
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: 220px; /* Adjust margin to not overlap navbar */
+  margin-bottom: 20px;
+}
+
+.component h2 {
+  color: #505050; /* Grey for component titles */
 }

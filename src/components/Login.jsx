@@ -23,7 +23,7 @@ function Login() {
         console.log('Login successful');
 
         
-        navigate('/favorites'); 
+        navigate('/home'); 
 
     
       } else {
@@ -35,7 +35,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form className="container" onSubmit={handleLogin}>
       <input
         type="text"
         value={username}

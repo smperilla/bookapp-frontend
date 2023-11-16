@@ -56,7 +56,7 @@ const Favorites = () => {
   };
 
   return (
-    <div>
+    <div className="container" >
       <h2>Favorites</h2>
       {favorites.length > 0 ? (
         <ul>

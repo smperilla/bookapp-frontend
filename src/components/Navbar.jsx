@@ -7,11 +7,12 @@ const Navbar = () => {
     <div className='navbar'>
         
        <div>
-        <h1>React Books App</h1>
+        <h1>Bookworm</h1>
        </div>
        <div>
-        Your Favorite Books
-       </div>
+        Your personal bookshelf
+       </div> <br />
+       <Link to="/home" className="button-link">Home</Link>
        <Link to="/search" className="button-link">Search for Books</Link>
      <Link to="/favorites" className="button-link">View Favorites</Link>
       <Link to="/login" className="button-link">Login</Link>

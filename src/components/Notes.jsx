@@ -42,7 +42,7 @@ const Notes = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:3001/api/notes', {
+      const response = await fetch('https://bookapp-backend-zph0.onrender.com/api/notes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const Notes = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:3001/api/notes/${noteId}`, {
+      const response = await fetch(`https://bookapp-backend-zph0.onrender.com/api/notes/${noteId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': token
@@ -99,7 +99,7 @@ const Notes = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:3001/api/notes/${editingNoteId}`, {
+      const response = await fetch(`https://bookapp-backend-zph0.onrender.com/api/notes/${editingNoteId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

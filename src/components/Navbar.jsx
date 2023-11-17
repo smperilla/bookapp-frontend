@@ -3,6 +3,14 @@ import '../App';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  
+  const handleLogout = () => {
+    localStorage.removeItem('token'); 
+    console.log('Logged Out');
+    
+
+  };
+  
   return (
     <div className='navbar'>
         
@@ -16,7 +24,9 @@ const Navbar = () => {
        <Link to="/search" className="button-link">Search for Books</Link>
      <Link to="/favorites" className="button-link">View Favorites</Link>
       <Link to="/login" className="button-link">Login</Link>
-      <Link to="/logout" className="button-link">Logout</Link>
+      <Link to="/logout" className="button-link" onClick={handleLogout}>
+        Logout
+      </Link>     
       <Link to="/register" className="button-link">Register</Link>
       <Link to="/notes" className="button-link">Notes</Link>
         </div>

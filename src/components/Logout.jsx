@@ -1,20 +1,35 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../App';
 
-function Logout() {
-  const navigate = useNavigate();
+const Logout = () => {
+    const [randomQuote, setRandomQuote] = useState(null);
 
-  const handleLogout = () => {
-    // Clear user token and other relevant data from local storage or state management
-    localStorage.removeItem('token');
+    useEffect(() => {
+        fetch('https://type.fit/api/quotes')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * data.length);
+                    setRandomQuote(data[randomIndex]);
+                }
+            })
+            .catch(error => console.log('Error fetching quotes:', error));
+    }, []);
 
-    // Redirect to login page or home page
-    navigate('/login'); 
-  };
-
-  return (
-    <button className="container" onClick={handleLogout}>Logout</button>
-  );
+    return (
+        <div className='container'>
+            <strong>You are logged out. Come back soon: </strong>
+            {randomQuote ? (
+                <div>
+                    <p>{randomQuote.text}</p>
+                    <p>— {randomQuote.author || 'Unknown'}</p>
+                </div>
+            ) : (
+                <p>Loading quote...</p>
+            )}
+        </div>
+    );
 }
 
 export default Logout;

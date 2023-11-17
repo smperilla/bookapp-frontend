@@ -1,103 +1,94 @@
-/* Global Styles */
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
-  background-color: #ffffff; /* Baby blue background for the app */
-  color: #505050; /* Medium grey for text */
+  background-color: #ffffff;
+  color: #505050;
 }
 
-/* Container for page content */
 .container {
   padding: 20px;
-  margin-top: 80px; /* Increased top margin to avoid overlap with navbar */
+  margin-top: 80px;
 }
 
-/* Navbar Styling */
 .navbar {
-  background-color: #B0E0E6; /* Lighter shade of baby blue for navbar */
-  color: #505050; /* Grey for text */
+  background-color: #B0E0E6;
+  color: #505050;
   padding: 20px;
   display: flex;
-  flex-direction: row; /* Row for horizontal layout */
-  align-items: center; /* Center items vertically in navbar */
-  justify-content: space-evenly; /* Evenly space items horizontally */
-  height: 60px; /* Set a fixed height for the navbar */
-  position: fixed; /* Fixed position */
-  width: 100%; /* Full width */
-  top: 0; /* Position at the top */
-  left: 0; /* Align to left edge */
-  z-index: 1000; /* Ensure navbar stays on top */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .navbar h1 {
   color: #505050;
   font-size: 1.5em;
-  margin-right: 20px; /* Adjusted for spacing on the right */
+  margin-right: 20px;
 }
 
 .navbar .button-link {
   text-decoration: none;
-  color: #708090; /* Slate grey for links */
+  color: #708090;
   font-weight: bold;
-  margin-right: 10px; /* Spacing between links */
+  margin-right: 10px;
   transition: color 0.3s;
 }
 
-/* Active link styling */
 .active-nav-link {
-  color: #505050; /* Grey for active link */
-  border-left: 4px solid #505050; /* Left border for active link */
-  padding-left: 16px; /* Adjust padding for alignment */
+  color: #505050;
+  border-left: 4px solid #505050;
+  padding-left: 16px;
 }
 
-/* Responsive Design Adjustments */
 @media (max-width: 600px) {
   .navbar {
       height: auto;
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      justify-content: flex-start; /* Align items to the start for vertical layout */
-      padding: 10px; /* Adjust padding for smaller navbar */
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
   }
 
   .navbar h1 {
-      margin-bottom: 10px; /* Space below the title */
+      margin-bottom: 10px;
   }
 
   .navbar .button-link {
-      margin-right: 0; /* Remove right margin on smaller screens */
-      margin-bottom: 5px; /* Add bottom margin for spacing */
+      margin-right: 0;
+      margin-bottom: 5px;
   }
 
   .container {
-      margin-top: auto; /* Adjust top margin based on navbar size */
+      margin-top: auto;
   }
 }
 
-/* Other Components */
 .component {
-  background-color: #fff; /* White background for components */
-  border: 1px solid #B0E0E6; /* Light baby blue border color */
+  background-color: #fff;
+  border: 1px solid #B0E0E6;
   padding: 15px;
   border-radius: 5px;
-  margin-top: 20px; /* Adjust margin for spacing below navbar */
+  margin-top: 20px;
 }
 
-
-/* Footer Styling */
 .footer {
-  background-color: #B0E0E6; /* Light baby blue background for the footer */
-  color: #505050; /* Grey text color */
-  text-align: center; /* Center align the text */
-  padding: 20px; /* Padding for spacing */
-  position: fixed; /* Fixed position to keep it at the bottom */
-  left: 0; /* Align to the left edge */
-  bottom: 0; /* Position at the bottom */
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensure footer stays on top of other elements */
+  background-color: #B0E0E6;
+  color: #505050;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-/* Example Footer Content Styling */
 .footer-content {
-  margin: 0 auto; /* Center the content inside the footer */
-  max-width: 1200px; /* Maximum width of the footer content */
+  margin: 0 auto;
+  max-width: 1200px;
 }

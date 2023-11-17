@@ -25,7 +25,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  animation: kenBurnsEffect 15s ease-in-out infinite;
+  animation: kenBurnsEffect 10s ease-in-out infinite;
   z-index: -1;
 }
 

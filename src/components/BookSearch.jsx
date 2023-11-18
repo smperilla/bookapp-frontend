@@ -60,14 +60,15 @@ const BookSearch = () => {
 
     return (
         <div className="container" >
+             <h1>What do you want to read?</h1>
             <form onSubmit={handleSubmit}>
-                <input 
+                <input className="input"
                     type="text" 
                     placeholder="Search books" 
                     value={query} 
                     onChange={(e) => setQuery(e.target.value)} 
                 />
-                <button type="submit">Search</button>
+                <button className = "login-button" type="submit">Search</button>
             </form>
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}

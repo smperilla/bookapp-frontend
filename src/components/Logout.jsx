@@ -19,7 +19,7 @@ const Logout = () => {
 
     return (
         <div className='container'>
-            <strong>You are logged out. Come back soon: </strong>
+             <h1>You are logged out. Come back soon</h1>
             {randomQuote ? (
                 <div>
                     <p>{randomQuote.text}</p>

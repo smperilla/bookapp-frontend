@@ -19,10 +19,10 @@ const Home = () => {
 
     return (
         <div className='container'>
-            <strong>Quote of the Day: </strong>
+             <h1>Quote of the day</h1>
             {randomQuote ? (
                 <div>
-                    <p>{randomQuote.text}</p>
+                    <h2>{randomQuote.text}</h2>
                     <p>— {randomQuote.author || 'Unknown'}</p>
                 </div>
             ) : (

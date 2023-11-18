@@ -35,19 +35,20 @@ const Register = () => {
     <div className="container" >
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
-        <input
+        <input className="input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
         />
-        <input
+        <input className="input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button type="submit">Register</button>
+        <button className= "login-button"
+        type="submit">Register</button>
       </form>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
     </div>

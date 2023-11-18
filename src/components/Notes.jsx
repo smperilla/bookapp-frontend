@@ -122,13 +122,13 @@ const Notes = () => {
 
   return (
     <div className="container" >
-      <h2>My Notes</h2>
-      <div>
+      <h1>My Notes</h1>
+      <div className="notes-textarea">
         <textarea
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
         />
-        <button onClick={addNote}>Add Note</button>
+        <button className="login-button" onClick={addNote}>Add Note</button>
       </div>
       {notes.length > 0 ? (
         <ul>
@@ -136,18 +136,18 @@ const Notes = () => {
             <li key={note._id}>
               {editingNoteId === note._id ? (
                 <>
-                  <textarea
+                  <textarea className="notes-textarea"
                     value={editingContent}
                     onChange={(e) => setEditingContent(e.target.value)}
                   />
-                  <button onClick={handleUpdateNote}>Save</button>
-                  <button onClick={() => setEditingNoteId(null)}>Cancel</button>
+                  <button className="login-button" onClick={handleUpdateNote}>Save</button>
+                  <button className="login-button" onClick={() => setEditingNoteId(null)}>Cancel</button>
                 </>
               ) : (
                 <>
                   <p>{note.content}</p>
-                  <button onClick={() => startEditing(note)}>Edit</button>
-                  <button onClick={() => deleteNote(note._id)}>Delete</button>
+                  <button className="login-button" onClick={() => startEditing(note)}>Edit</button>
+                  <button className="login-button" onClick={() => deleteNote(note._id)}>Delete</button>
                 </>
               )}
             </li>

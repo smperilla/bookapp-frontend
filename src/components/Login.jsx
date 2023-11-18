@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
 
 function Login() {
@@ -27,7 +27,7 @@ function Login() {
 
     
       } else {
-        // Handle errors (e.g., show message to user)
+        
       }
     } catch (error) {
       console.error('Login failed:', error);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // for redirection after successful registration
+import { useNavigate } from 'react-router-dom'; 
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -20,7 +20,7 @@ const Register = () => {
 
       if (response.status === 201) {
         console.log('Registration successful');
-        navigate('/login'); // Redirect to login page after successful registration
+        navigate('/login'); 
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Registration failed');

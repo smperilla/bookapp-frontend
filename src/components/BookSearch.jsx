@@ -28,7 +28,7 @@ const BookSearch = () => {
 
     const addToFavorites = async (book) => {
         try {
-          const token = localStorage.getItem('token'); // Retrieve the token from local storage
+          const token = localStorage.getItem('token'); 
           if (!token) {
             console.error('No token found, user might not be logged in');
             return;
@@ -38,7 +38,7 @@ const BookSearch = () => {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': token // Include the token in the Authorization header
+              'Authorization': token 
             },
             body: JSON.stringify({
               bookId: book.id,
@@ -47,7 +47,7 @@ const BookSearch = () => {
               thumbnail: book.volumeInfo.imageLinks?.thumbnail,
             }),
           });
-          // Handle successful addition (e.g., show a message)
+        
         } catch (error) {
           console.error('Error adding favorite:', error);
         }

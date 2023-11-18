@@ -12,13 +12,13 @@ import Register from "./components/Register";
 import Notes from "./components/Notes";
 
 function App() {
-  const [favorites, setFavorites] = useState([]); // State to store favorites
+  const [favorites, setFavorites] = useState([]); 
 
 
 
-  // Function to add a book to favorites
+
   const addToFavorites = (book) => {
-    // Prevent adding duplicates
+    
     if (!favorites.some(favorite => favorite.id === book.id)) {
       setFavorites([...favorites, book]);
     }

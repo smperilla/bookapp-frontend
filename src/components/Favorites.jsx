@@ -6,7 +6,7 @@ const Favorites = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const token = localStorage.getItem('token'); // Retrieve the token from local storage
+        const token = localStorage.getItem('token'); 
         if (!token) {
           console.error('No token found, user might not be logged in');
           return;
@@ -14,7 +14,7 @@ const Favorites = () => {
   
         const response = await fetch('https://bookapp-backend-zph0.onrender.com/api/favorites', {
           headers: {
-            'Authorization': token // Include the token in the Authorization header
+            'Authorization': token 
           }
         });
   
@@ -33,7 +33,7 @@ const Favorites = () => {
 
   const removeFromFavorites = async (bookId) => {
     try {
-      const token = localStorage.getItem('token'); // Retrieve the token from local storage
+      const token = localStorage.getItem('token'); 
       if (!token) {
         console.error('No token found, user might not be logged in');
         return;
@@ -42,7 +42,7 @@ const Favorites = () => {
       const response = await fetch(`https://bookapp-backend-zph0.onrender.com/api/favorites/${bookId}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': token // Include the token in the Authorization header
+          'Authorization': token 
         }
       });
   
